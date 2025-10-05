@@ -27,3 +27,18 @@ out_file = open(FILENAME, 'w')
 # Write starting price to file
 print(f"Starting price: ${price:,.2f}", file=out_file)
 
+# Run the simulation
+while MIN_PRICE <= price <= MAX_PRICE:
+    number_of_days += 1
+
+    if random.randint(0, 1) == 0:
+        price -= random.uniform(0, MAX_DECREASE) * price
+    else:
+        price += random.uniform(0, MAX_INCREASE) * price
+
+    # Write the current day and price to file
+    print(f"On day {number_of_days} price is: ${price:,.2f}", file=out_file)
+
+    # If the price exceeds the limit, stop the simulation
+    if price > 1000 or price < 0.01:
+        break
