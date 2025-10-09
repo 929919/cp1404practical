@@ -11,7 +11,6 @@ def generate_quick_pick():
     quick_pick.sort()
     return quick_pick
 
-
 def main():
     """Main function to execute the lottery quick pick generator."""
     num_picks = int(input("How many quick picks? "))
