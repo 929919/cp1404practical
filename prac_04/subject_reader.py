@@ -19,3 +19,10 @@ def load_data():
             parts[2] = int(parts[2])
             data.append(parts)
     return data
+
+def display_subject_details(data):
+    """Display details of subjects in a readable format."""
+    for subject in data:
+        print(f"{subject[0]} is taught by {subject[1]} and has {subject[2]} students")
+
+main()
