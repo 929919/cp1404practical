@@ -1,5 +1,5 @@
 """
-Program to store colour names and their hexadecimal codes.
+Program to look up hex codes by colour name.
 """
 
 HEX_COLOURS = {
@@ -15,4 +15,10 @@ HEX_COLOURS = {
     "Blue": "#0000FF"
 }
 
-print("Colour dictionary loaded successfully.")
+colour_name = input("Enter colour name: ").strip().title()
+while colour_name:
+    if colour_name in HEX_COLOURS:
+        print(f"{colour_name} is {HEX_COLOURS[colour_name]}")
+    else:
+        print("Invalid colour name")
+    colour_name = input("Enter colour name: ").strip().title()
