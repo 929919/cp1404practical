@@ -1,5 +1,7 @@
 """
-Program to look up hex codes by colour name.
+Hex Colour Lookup
+Estimate: 15 minutes
+Actual: 20 minutes
 """
 
 HEX_COLOURS = {
@@ -15,10 +17,15 @@ HEX_COLOURS = {
     "Blue": "#0000FF"
 }
 
-colour_name = input("Enter colour name: ").strip().title()
-while colour_name:
-    if colour_name in HEX_COLOURS:
-        print(f"{colour_name} is {HEX_COLOURS[colour_name]}")
-    else:
-        print("Invalid colour name")
+def main():
+    """Prompt the user for colour names and display their hex codes."""
     colour_name = input("Enter colour name: ").strip().title()
+    while colour_name:
+        try:
+            print(f"{colour_name} is {HEX_COLOURS[colour_name]}")
+        except KeyError:
+            print("Invalid colour name")
+        colour_name = input("Enter colour name: ").strip().title()
+
+if __name__ == "__main__":
+    main()
