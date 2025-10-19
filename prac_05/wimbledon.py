@@ -3,10 +3,12 @@ Wimbledon Champions Data Processing
 Estimate: 25 minutes
 Actual: 20 minutes
 """
+
 def read_wimbledon_data(filename):
-    """Read the Wimbledon CSV file and return data as a list of lists."""
+    """Read Wimbledon CSV file and return data as a list of lists."""
     with open(filename, "r", encoding="utf-8-sig") as file:
         return [line.strip().split(',') for line in file.readlines()[1:]]
+
 
 def process_wimbledon_data(data):
     """Count wins per champion and list winning countries."""
@@ -19,6 +21,7 @@ def process_wimbledon_data(data):
         countries.add(country)
 
     return champions, sorted(countries)
+
 
 def display_wimbledon_results(champions, countries):
     """Print champions and countries in the required format."""
