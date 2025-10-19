@@ -1,5 +1,7 @@
 """
-Program to collect emails and automatically extract names.
+Emails
+Estimate: 20 minutes
+Actual: 25 minutes
 """
 
 def extract_name(email):
@@ -10,12 +12,15 @@ def extract_name(email):
 
 
 def main():
-    """Ask the user for emails and display extracted names."""
+    """Store emails and names in a dictionary and display them."""
     email_to_name = {}
 
     email = input("Email: ").strip()
     while email:
         name = extract_name(email)
+        confirm = input(f"Is your name {name}? (Y/n) ").strip().lower()
+        if confirm and confirm != 'y':
+            name = input("Name: ").strip().title()
         email_to_name[email] = name
         email = input("Email: ").strip()
 
